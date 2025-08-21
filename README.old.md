@@ -60,3 +60,4 @@ vs-code extentions:
     - Auto export
     - Auto complete tag
     - ES7+ React/Redux/React-Native snippets
+    - Tailwind Css intellisence
