@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Slider from "react-slick";
+import { NextArrow, PrevArrow } from "./arrow";
 
 const HeroCarousel = () => {
   const [images, setImages] = useState([    "https://picsum.photos/800/400?random=1",
@@ -16,10 +17,13 @@ const HeroCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplayspeed: 2000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
   };
   return (
     <div>
-      <div className="lg:hidden">
+      <div className="">
         <Slider {...settings}>
         {
           images.map((image, index) => {
