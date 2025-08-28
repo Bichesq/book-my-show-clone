@@ -54,7 +54,7 @@ export const NavLg = () => {
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-700 px-4 py-3">
+    <nav className="bg-background-dark px-4 py-3">
       {/* small screen Navbar*/}
       <div className="md:hidden">
         <NavSm />

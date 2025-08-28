@@ -4,9 +4,16 @@ export type entertainmentProps = {
     subject?: string
 }
 
+export type PosterProps = {
+    title: string;
+    subTitle: string;
+    poster: string; // single poster URL
+    isDark?: boolean;
+}
+
 export type PosterSliderProps = {
     title: string
     subTitle: string
-    posters: object
+    posters: PosterProps[]
     isDark: boolean
 }

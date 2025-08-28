@@ -3,8 +3,8 @@ import type {entertainmentProps} from '../../../types/index'
 
 const EntertainmentCard = (props: entertainmentProps) => {
   return (
-    <div>
-      <img src={props.src} alt="entertainment" className="w-full h-full rounded-lg" />
+    <div  className='mx-3'>
+      <img src={props.src} alt="entertainment" className="w-full h-full rounded-lg mx-2" />
     </div>
   )
 }
