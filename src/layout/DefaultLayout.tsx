@@ -10,7 +10,7 @@ const DefaultLayout = (Component: ComponentType<any>) =>
       <Component {...props} />
       <Footer />
     </div>
-  )
+  ) 
 }
 
 export default DefaultLayout

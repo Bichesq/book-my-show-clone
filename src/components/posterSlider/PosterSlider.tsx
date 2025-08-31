@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import Poster from '../../components/poster/Poster'
 import type { PosterSliderProps } from '../../../types';
 import type { Key } from "react";
-import type { JSX } from "react/jsx-runtime";
+
 
 const PosterSlider = (props: PosterSliderProps) => {
   const { posters, title, subTitle, isDark } = props;
@@ -49,10 +49,15 @@ const PosterSlider = (props: PosterSliderProps) => {
         <Slider {...settings}>
           {posters &&
             posters.map((poster: string[], index: Key | null | undefined) => (
-              <Poster key={index} {...poster} />
+              <Poster title={''} poster_Path={''} key={index} {...poster} />
             ))}
         </Slider>
       </div>
+      <Slider {...settings}>
+        {posters &&posters.map((each) => (
+          <Poster {...each} isDark={isDark} />
+        ))}
+      </Slider>
     </div>
   );
 };

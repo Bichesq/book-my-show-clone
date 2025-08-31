@@ -24,24 +24,11 @@ export const NextArrow = (props: any) => {
 };
 
 export const PrevArrow = (props: any) => {
-  return (
-    <div
-      className={
-        props.className +
-        "m-0 p-2.5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white border-2 border-gray-900 align-center justify-center"
-      }
-      style={{
-        ...props.style,
-        position: "absolute",
-        left: 10,
-        top: "50%",
-        transform: "translateY(-50%)",
-        zIndex: 10,
-        background: "white",
-      }}
-      onClick={props.onClick}
-    >
-      <GrPrevious />
-    </div>
-  );
-};
+    return (
+        <div>
+            <div className={props.className} style={{ ...props.style }} onClick={props.onClick} >
+                <GrPrevious />
+            </div>
+        </div>
+    );
+}

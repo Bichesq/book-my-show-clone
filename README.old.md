@@ -9,7 +9,7 @@ HOCs/Layouts:
     >> Defaults.Hoc.jsx
     >> Movie.Hoc.jsx
 
-Components:
+Components(folders):        Components:
     >>Cast
     >>Entertainment         EntertainmentCard.Component.jsx
     >>HeroCarousel          HeroCarousel.Compoment.jsx

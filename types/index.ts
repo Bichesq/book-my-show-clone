@@ -17,3 +17,4 @@ export type posterProps = {
     title: string;
     poster_Path: string;
 }
+
