@@ -1,6 +1,7 @@
-import React from 'react'
+import type { posterProps } from '../../../types/index'
 
-const Poster = () => {
+const Poster = (props: posterProps) => {
+  const { title, poster_Path } = props;
   return (
     <div>
       Poster

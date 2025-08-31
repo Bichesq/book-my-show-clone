@@ -22,7 +22,7 @@ export const NavMd = () => {
   return (
     <>
       <div className="w-10 h-10">
-        <img src="" alt="logo" className="w-full h-full" />
+        <img src="#" alt="logo" className="w-full h-full" />
       </div>
       <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
       <BiSearch />
@@ -39,7 +39,7 @@ export const NavLg = () => {
       <div className="container flex mx-auto px-4 items-center justify-between">
         <div className="flex items-center w-1/2 gap-3">
           <div className="w-10 h-10">
-            <img src="" alt="logo" className="w-full h-full" />
+            <img src="#" alt="logo" className="w-full h-full" />
           </div>
           <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
             <BiSearch />
@@ -54,7 +54,7 @@ export const NavLg = () => {
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-700 px-4 py-3">
+    <nav className="px-4 py-3">
       {/* small screen Navbar*/}
       <div className="md:hidden">
         <NavSm />
