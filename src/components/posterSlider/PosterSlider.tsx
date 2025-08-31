@@ -1,24 +1,27 @@
 import Slider from 'react-slick';
 import Poster from '../../components/poster/Poster'
-import type { PosterSliderProps } from '../../../types';
-import type { Key } from "react";
-
+import type { Movie, PosterSliderProps } from "../../../types";
+// import type { Key } from "react";
 
 const PosterSlider = (props: PosterSliderProps) => {
-  const { posters, title, subTitle, isDark } = props;
-  const settings = {
+  const { posters, title, isDark } = props;
+  const Settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
+    arrows: true,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
+          slidesToShow: 4,
+          slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -27,7 +30,7 @@ const PosterSlider = (props: PosterSliderProps) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -36,30 +39,23 @@ const PosterSlider = (props: PosterSliderProps) => {
   return (
     <div>
       <div className="flex flex-col items-start sm:ml-3 my-2">
-        <h3
-          className={`text-2xl font-bold ${
+        <h1
+          className={`text-3xl font-bold ${
             isDark ? "text-white" : "text-black"
           }`}
         >
           {title}
-        </h3>
-        <h5 className={`text-sm ${isDark ? "text-white" : "text-black"}`}>
-          {subTitle}
-        </h5>
-        <Slider {...settings}>
-          {posters &&
-            posters.map((poster: string[], index: Key | null | undefined) => (
-              <Poster title={''} poster_Path={''} key={index} {...poster} />
-            ))}
-        </Slider>
+        </h1>
+        
       </div>
-      <Slider {...settings}>
-        {posters &&posters.map((each) => (
-          <Poster {...each} isDark={isDark} />
-        ))}
+      <Slider {...Settings}>
+        {posters &&
+          posters.map((poster: Movie, index: number) => (
+            <Poster key={index} {...poster} isDark={isDark} />
+          ))}
       </Slider>
     </div>
   );
 };
 
-export default PosterSlider
+export default PosterSlider;

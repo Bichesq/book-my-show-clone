@@ -1,6 +1,6 @@
-import type React from "react";
+// import type React from "react";
 import DefaultLayout from "../layout/DefaultLayout";
-import { Component, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // Component imports
 import HeroCarousel from "../components/heroCarousel/HeroCarousel";
@@ -32,7 +32,7 @@ const HomePage = () => {
                 const response = await axios.get(
                   `https://api.themoviedb.org/3/movie/upcoming?api_key=${MOVIE_DB_API_KEY}`
                 );
-                setPremierMovies(response.data.results.poster_path);
+                setPremierMovies(response.data.results);
               } catch (error) {
                 console.error("Error fetching premier movies:", error);
               }
@@ -44,7 +44,8 @@ const HomePage = () => {
                 const response = await axios.get(
                   `https://api.themoviedb.org/3/movie/now_playing?api_key=${MOVIE_DB_API_KEY}`
                 );
-                setOnlineStreamEvents(response.data.results.poster_path);
+              setOnlineStreamEvents(response.data.results);
+              console.log(response.data.results);
               } catch (error) {
                 console.error("Error fetching online stream events:", error);
               }
@@ -74,22 +75,35 @@ const HomePage = () => {
               alt="Rupay image"
             />
           </div>
-          <div className="container mx-auto px-4 md:px-12 my-8 bg-background-950">
-            <PostSlider
-              title="Premiers"
-            //   subTitle=""
-              posters={premierMovies}
-              isDark={true}
-            />
-          </div>
+
           <div className="container mx-auto px-4 md:px-12 my-8">
             <PostSlider
-              title="Online Streaming Events"
-              subTitle="Online Stream Events"
+              title="The Best of Live Events"
               posters={onlineStreamEvents}
               isDark={false}
             />
           </div>
+
+          <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen h-auto bg-background-950">
+            <div className="container mx-auto px-4 md:px-12 my-8 bg-background-950">
+              <div className="hidden md:flex">
+                <img
+                  src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-banner-web-collection-202208191200.png"
+                  className="w-full h-full"
+                  alt="Rupay image"
+                />
+              </div>
+            </div>
+
+            <div className="container mx-auto px-4 md:px-12 my-8">
+              <PostSlider
+                title="Premiers"
+                subTitle="Brand New Releases Every Friday"
+                posters={premierMovies}
+                isDark={true}
+              />
+            </div>
+          </section>
         </div>
         {/* </div> */}
       </>
